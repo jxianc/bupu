@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  bpdb:
+    container_name: bupudb
+    image: postgres
+    ports:
+      - 5050:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: bupudb
+    volumes:
+      - ./dbdata:/var/lib/postgresql/data
+    networks:
+      - bpapi
+networks:
+  bpapi:
+volumes:
+  dbdata:
