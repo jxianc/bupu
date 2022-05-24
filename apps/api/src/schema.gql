@@ -14,3 +14,7 @@ type Mutation {
 type Query {
   getBupu: Bp!
 }
+
+type Subscription {
+  booped: Int!
+}

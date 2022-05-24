@@ -14,6 +14,10 @@ import { BpModule } from './bp/bp.module'
       playground: true,
       // plugins: [ApolloServerPluginLandingPageLocalDefault()],
       context: ({ req, res }) => ({ req, res }),
+      subscriptions: {
+        'graphql-ws': true,
+        'subscriptions-transport-ws': true,
+      },
     }),
     ConfigModule.forRoot(),
     BpModule,
