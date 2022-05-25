@@ -3,6 +3,8 @@ import { useDark, useToggle } from '@vueuse/core'
 
 const isDark = useDark()
 const toggleTheme = useToggle(isDark)
+
+console.log('testing lint staged for vue file')
 </script>
 
 <template>

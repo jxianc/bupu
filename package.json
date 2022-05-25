@@ -30,7 +30,7 @@
   },
   "packageManager": "pnpm@7.0.0",
   "lint-staged": {
-    "apps/**/*.{js,ts,jsx,tsx}": [
+    "apps/**/*.{js,ts,jsx,tsx,vue}": [
       "prettier --write",
       "eslint --fix"
     ],
