@@ -1,53 +1,25 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { useDark, useToggle } from '@vueuse/core'
 
-export type UserTheme = 'light' | 'dark'
-
-const setTheme = (theme: UserTheme) => {
-  localStorage.setItem('user-theme', theme)
-  userTheme.value = theme
-  document.documentElement.className = theme
-}
-
-const getTheme = (): UserTheme => {
-  return localStorage.getItem('user-theme') as UserTheme
-}
-
-// const toggleTheme = (): void => {
-//   const activeTheme = localStorage.getItem('user-theme')
-//   if (activeTheme === 'light') {
-//     setTheme('dark')
-//   } else {
-//     setTheme('light')
-//   }
-// }
-
-const getMediaPreference = (): UserTheme => {
-  const hasDarkPreference = window.matchMedia(
-    '(prefers-color-scheme: dark)',
-  ).matches
-  if (hasDarkPreference) {
-    return 'dark'
-  } else {
-    return 'light'
-  }
-}
-
-const userTheme = ref<UserTheme>(getTheme() || getMediaPreference())
-
-onMounted(() => setTheme(userTheme.value))
+const isDark = useDark()
+const toggleTheme = useToggle(isDark)
 </script>
 
 <template>
   <main
     class="flex flex-col space-y-4 min-h-screen max-h-screen text-center items-center justify-center"
   >
-    <!-- <header
-      class="absolute px-4 top-2 w-full font-semibold flex justify-between"
+    <header
+      class="absolute px-4 top-4 w-full font-semibold flex justify-between"
     >
-      <div>light / dark</div>
+      <button
+        class="bg-gray-200 dark:bg-zinc-800 px-2 py-1 rounded-[0.3em] font-semibold dark:hover:bg-zinc-700 hover:bg-zinc-300"
+        @click="toggleTheme()"
+      >
+        {{ isDark ? 'Light' : 'Dark' }}
+      </button>
       <div>source</div>
-    </header> -->
+    </header>
     <div class="text-3xl font-bold">
       <h1>ブープ</h1>
       <h2>Bū pu</h2>
