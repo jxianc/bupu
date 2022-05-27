@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="280" alt="Screen Shot 2022-05-27 at 18 38 59" src="https://user-images.githubusercontent.com/62977699/170800866-ed4a820a-7da4-4420-862d-ac2c7f653785.png">
+  <img width="140" alt="Screen Shot 2022-05-27 at 18 38 59" src="https://user-images.githubusercontent.com/62977699/170800866-ed4a820a-7da4-4420-862d-ac2c7f653785.png">
 </p>
 <h3 align="center">
   Bū pu ブープ
