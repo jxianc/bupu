@@ -1,8 +1,14 @@
 <script setup lang="ts">
+import { useQuery } from '@urql/vue'
 import { useDark, useToggle } from '@vueuse/core'
+import { getBupuQuery } from './graphql'
 
 const isDark = useDark()
 const toggleTheme = useToggle(isDark)
+
+const { data } = useQuery({
+  query: getBupuQuery,
+})
 </script>
 
 <template>
@@ -28,7 +34,7 @@ const toggleTheme = useToggle(isDark)
       <h1>ブープ</h1>
       <h2>Bū pu</h2>
     </div>
-    <p class="text-4xl font-bold">69420 bp</p>
+    <p class="text-4xl font-bold">{{ data.getBupu.bp }} bp</p>
     <footer class="absolute px-4 bottom-2 w-full font-semibold">
       27348 people booping
     </footer>

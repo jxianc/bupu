@@ -99,6 +99,7 @@ importers:
     specifiers:
       '@rushstack/eslint-patch': ^1.1.0
       '@types/node': ^16.11.27
+      '@urql/vue': ^0.6.2
       '@vitejs/plugin-vue': ^2.3.1
       '@vue/eslint-config-typescript': ^10.0.0
       '@vue/tsconfig': ^0.1.3
@@ -106,6 +107,7 @@ importers:
       autoprefixer: ^10.4.7
       eslint: ^8.5.0
       eslint-plugin-vue: ^8.2.0
+      graphql: ^16.5.0
       postcss: ^8.4.14
       tailwindcss: ^3.0.24
       typescript: ~4.6.3
@@ -113,7 +115,9 @@ importers:
       vue: ^3.2.33
       vue-tsc: ^0.34.7
     dependencies:
+      '@urql/vue': 0.6.2_graphql@16.5.0+vue@3.2.36
       '@vueuse/core': 8.5.0_vue@3.2.36
+      graphql: 16.5.0
       vue: 3.2.36
     devDependencies:
       '@rushstack/eslint-patch': 1.1.3
@@ -952,6 +956,14 @@ packages:
     dependencies:
       graphql: 16.5.0
       tslib: 2.4.0
+    dev: false
+
+  /@graphql-typed-document-node/core/3.1.1_graphql@16.5.0:
+    resolution: {integrity: sha512-NQ17ii0rK1b34VZonlmT2QMJFI70m0TRwbknO/ihlbatXyaktDhN/98vBiUU6kNBPljqGqyIrl2T4nY2RpFANg==}
+    peerDependencies:
+      graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
+    dependencies:
+      graphql: 16.5.0
     dev: false
 
   /@humanwhocodes/config-array/0.9.5:
@@ -2013,6 +2025,28 @@ packages:
     dependencies:
       '@typescript-eslint/types': 5.23.0
       eslint-visitor-keys: 3.3.0
+
+  /@urql/core/2.5.0_graphql@16.5.0:
+    resolution: {integrity: sha512-xXdcgb0H3nNTP4OfC+5T3CHJ0iz7Jj0QQYSYhN/hvKrzFnisPz2n6WXmvsHmMXk5bJHsr39kx4eOHcpsJuyCew==}
+    peerDependencies:
+      graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
+    dependencies:
+      '@graphql-typed-document-node/core': 3.1.1_graphql@16.5.0
+      graphql: 16.5.0
+      wonka: 4.0.15
+    dev: false
+
+  /@urql/vue/0.6.2_graphql@16.5.0+vue@3.2.36:
+    resolution: {integrity: sha512-hrVysup75sgnNgOhhvVfI2ChOM1JDx+/+D9qKIKrTHn/IsykIjm9IrYK5+CcYoQmzXX6lfnJ8d1F3uu8k4flyA==}
+    peerDependencies:
+      graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
+      vue: ^3.0.0
+    dependencies:
+      '@urql/core': 2.5.0_graphql@16.5.0
+      graphql: 16.5.0
+      vue: 3.2.36
+      wonka: 4.0.15
+    dev: false
 
   /@vitejs/plugin-vue/2.3.3_vite@2.9.9+vue@3.2.36:
     resolution: {integrity: sha512-SmQLDyhz+6lGJhPELsBdzXGc+AcaT8stgkbiTFGpXPe8Tl1tJaBw1A6pxDqDuRsVkD8uscrkx3hA7QDOoKYtyw==}
@@ -7721,6 +7755,10 @@ packages:
     dependencies:
       execa: 4.1.0
     dev: true
+
+  /wonka/4.0.15:
+    resolution: {integrity: sha512-U0IUQHKXXn6PFo9nqsHphVCE5m3IntqZNB9Jjn7EB1lrR7YTDY3YWgFvEvwniTzXSvOH/XMzAZaIfJF/LvHYXg==}
+    dev: false
 
   /word-wrap/1.2.3:
     resolution: {integrity: sha512-Hz/mrNwitNRh/HUAtM/VT/5VH+ygD6DV7mYKZAtHOrbs8U7lvPS6xf7EJKMF0uW1KJCl0H701g3ZGus+muE5vQ==}
