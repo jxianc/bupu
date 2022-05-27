@@ -1,6 +1,7 @@
 # Bū pu ブープ
 
-⚠️ **still in development**
+> **Warning**
+> This project is still in development
 
 ### Stacks
 
