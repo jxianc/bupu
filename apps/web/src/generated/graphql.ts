@@ -42,6 +42,10 @@ export type Subscription = {
   booped: Scalars['Int']
 }
 
+export type BoopedSubscriptionVariables = Exact<{ [key: string]: never }>
+
+export type BoopedSubscription = { __typename?: 'Subscription'; booped: number }
+
 export type GetBupuQueryVariables = Exact<{ [key: string]: never }>
 
 export type GetBupuQuery = {
@@ -49,6 +53,25 @@ export type GetBupuQuery = {
   getBupu: { __typename?: 'Bp'; id: number; bp: number }
 }
 
+export const BoopedDocument = gql`
+  subscription Booped {
+    booped
+  }
+`
+
+export function useBoopedSubscription<R = BoopedSubscription>(
+  options: Omit<
+    Urql.UseSubscriptionArgs<never, BoopedSubscriptionVariables>,
+    'query'
+  > = {},
+  handler?: Urql.SubscriptionHandlerArg<BoopedSubscription, R>,
+) {
+  return Urql.useSubscription<
+    BoopedSubscription,
+    R,
+    BoopedSubscriptionVariables
+  >({ query: BoopedDocument, ...options }, handler)
+}
 export const GetBupuDocument = gql`
   query GetBupu {
     getBupu {

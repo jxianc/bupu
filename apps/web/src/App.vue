@@ -1,12 +1,15 @@
 <script setup lang="ts">
 import { useDark, useToggle } from '@vueuse/core'
-import { useGetBupuQuery } from './generated/graphql'
+import { useBoopedSubscription, useGetBupuQuery } from './generated/graphql'
 import Vue3autocounter from 'vue3-autocounter'
 
 const isDark = useDark()
 const toggleTheme = useToggle(isDark)
 
-const { data } = useGetBupuQuery()
+const { data: getBupuData } = useGetBupuQuery()
+const { data: boopedData } = useBoopedSubscription({}, (_oldBupu, response) => {
+  return response
+})
 </script>
 
 <template>
@@ -35,7 +38,7 @@ const { data } = useGetBupuQuery()
     <Vue3autocounter
       ref="counter"
       :startAmount="0"
-      :endAmount="data?.getBupu.bp"
+      :endAmount="boopedData?.booped || getBupuData?.getBupu.bp"
       suffix=" bp"
       :duration="1"
       separator=","
