@@ -42,6 +42,13 @@ export type Subscription = {
   booped: Scalars['Int']
 }
 
+export type AddBupuMutationVariables = Exact<{ [key: string]: never }>
+
+export type AddBupuMutation = {
+  __typename?: 'Mutation'
+  addBupu: { __typename?: 'Bp'; id: number; bp: number }
+}
+
 export type BoopedSubscriptionVariables = Exact<{ [key: string]: never }>
 
 export type BoopedSubscription = { __typename?: 'Subscription'; booped: number }
@@ -53,6 +60,20 @@ export type GetBupuQuery = {
   getBupu: { __typename?: 'Bp'; id: number; bp: number }
 }
 
+export const AddBupuDocument = gql`
+  mutation AddBupu {
+    addBupu {
+      id
+      bp
+    }
+  }
+`
+
+export function useAddBupuMutation() {
+  return Urql.useMutation<AddBupuMutation, AddBupuMutationVariables>(
+    AddBupuDocument,
+  )
+}
 export const BoopedDocument = gql`
   subscription Booped {
     booped

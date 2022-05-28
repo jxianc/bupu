@@ -1,0 +1,6 @@
+mutation AddBupu {
+  addBupu {
+    id
+    bp
+  }
+}
