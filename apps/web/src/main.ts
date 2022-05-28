@@ -9,5 +9,4 @@ const urqlOptions: ClientOptions = {
 
 const app = createApp(App)
 app.use(urql, urqlOptions)
-
 app.mount('#app')

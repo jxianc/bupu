@@ -119,6 +119,7 @@ importers:
       vite: ^2.9.5
       vue: ^3.2.33
       vue-tsc: ^0.34.7
+      vue3-autocounter: ^1.0.6
     dependencies:
       '@graphql-codegen/cli': 2.6.2_z7j6jxnwmfmmvohlou426sviiy
       '@urql/vue': 0.6.2_graphql@16.5.0+vue@3.2.36
@@ -126,6 +127,7 @@ importers:
       graphql: 16.5.0
       graphql-tag: 2.12.6_graphql@16.5.0
       vue: 3.2.36
+      vue3-autocounter: 1.0.6_vue@3.2.36
     devDependencies:
       '@graphql-codegen/typescript': 2.4.11_graphql@16.5.0
       '@graphql-codegen/typescript-operations': 2.4.0_graphql@16.5.0
@@ -9560,6 +9562,15 @@ packages:
       '@vue/runtime-dom': 3.2.36
       '@vue/server-renderer': 3.2.36_vue@3.2.36
       '@vue/shared': 3.2.36
+    dev: false
+
+  /vue3-autocounter/1.0.6_vue@3.2.36:
+    resolution: {integrity: sha512-jOgCD2WaOjt/tOAAGKDm2DTyQRdKyfqJv5ElUz/vR0ZJgUd4yDd6UX6+2YU3LQpY4qoFNZkzLloAfALAqK041g==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      vue: ^3.0.5
+    dependencies:
+      vue: 3.2.36
     dev: false
 
   /w3c-hr-time/1.0.2:

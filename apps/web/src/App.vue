@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useDark, useToggle } from '@vueuse/core'
 import { useGetBupuQuery } from './generated/graphql'
+import Vue3autocounter from 'vue3-autocounter'
 
 const isDark = useDark()
 const toggleTheme = useToggle(isDark)
@@ -31,7 +32,17 @@ const { data } = useGetBupuQuery()
       <h1>ブープ</h1>
       <h2>Bū pu</h2>
     </div>
-    <p class="text-4xl font-bold">{{ data?.getBupu.bp }} bp</p>
+    <Vue3autocounter
+      ref="counter"
+      :startAmount="0"
+      :endAmount="data?.getBupu.bp"
+      suffix=" bp"
+      :duration="1"
+      separator=","
+      decimalSeparator="."
+      :autoinit="true"
+      class="text-4xl font-bold"
+    />
     <footer class="absolute px-4 bottom-2 w-full font-semibold">
       27348 people booping
     </footer>
